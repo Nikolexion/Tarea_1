@@ -32,4 +32,12 @@ public class Cliente {
     public void setDireccion(Direccion direccion) {
         this.direccion = direccion;
     }
+
+    public String toString() {
+        return "Cliente{" +
+                "nombre='" + nombre + '\'' +
+                ", rut='" + rut + '\'' +
+                ", direccion=" + direccion +
+                '}';
+    }
 }

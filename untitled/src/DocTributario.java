@@ -28,4 +28,12 @@ public class DocTributario {
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
+
+    public String toString() {
+        return "DocTributario{" +
+                "numero='" + numero + '\'' +
+                ", rut='" + rut + '\'' +
+                ", fecha=" + fecha +
+                '}';
+    }
 }
