@@ -1,5 +1,5 @@
 import java.util.Date;
-abstract class Pago {
+public class Pago {
     private float monto;
     private Date fecha;
 
@@ -14,6 +14,13 @@ abstract class Pago {
     public Date getFecha(){
         return fecha;
     }
-    public abstract String toString();
+
+    @Override
+    public String toString() {
+        return "Pago{" +
+                "monto=" + monto +
+                ", fecha=" + fecha +
+                '}';
+    }
 }
 
