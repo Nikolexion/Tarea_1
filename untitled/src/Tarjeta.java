@@ -19,6 +19,11 @@ class Tarjeta extends Pago{
 
     @Override
     public String toString(){
-        return "Tarjeta"; //Ajustar toString, esta mal empleado
+        return "Tarjeta{" +
+                "monto='" + getMonto() + '\'' +
+                ", fecha='" + getFecha() + '\'' +
+                ", tipo=" + tipo + '\'' +
+                ", numTransaccion=" + numTransaccion +
+                '}';
     }
 }

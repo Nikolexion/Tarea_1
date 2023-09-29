@@ -20,7 +20,12 @@ class Transferencia extends Pago {
 
     @Override
     public String toString(){
-        return "Transferencia"; //Ajustar toString, esta mal empleado
+        return "Transferencia{" +
+                "monto='" + getMonto() + '\'' +
+                ", fecha='" + getFecha() + '\'' +
+                ", banco=" + banco + '\'' +
+                ", numCuenta=" + numCuenta +
+                '}';
     }
 
 }

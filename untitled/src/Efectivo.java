@@ -11,6 +11,9 @@ class Efectivo extends Pago{
     }
     @Override
     public String toString(){
-        return "Efectivo"; //Ajustar toString, esta mal empleado
+        return "Efectivo{" +
+                "monto='" + getMonto() + '\'' +
+                ", fecha='" + getFecha() +
+                '}';
     }
 }
