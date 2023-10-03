@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-    import java.util.Date;
+import java.util.Date;
 
 public class OrdenCompra {
     private Date fecha;
@@ -8,8 +8,8 @@ public class OrdenCompra {
     //private ArrayList<DetalleOrden> ordenArraylist;
     private Pago pago;
 
-    public OrdenCompra(Date fecha, String estado, Pago pago) {
-        this.fecha = fecha;
+    public OrdenCompra(String estado, Pago pago) {
+        fecha = new Date();
         this.estado = estado;
         this.pago = pago;
     }
