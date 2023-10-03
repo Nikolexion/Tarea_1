@@ -9,6 +9,15 @@ class Transferencia extends Pago {
         this.banco = banco;
         this.numCuenta = numCuenta;
     }
+    @Override
+    float getMonto() {
+        return 0;
+    }
+
+    @Override
+    Date getFecha() {
+        return null;
+    }
 
     public String getBanco(){
         return banco;

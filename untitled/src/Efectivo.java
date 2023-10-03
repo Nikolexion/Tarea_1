@@ -9,6 +9,17 @@ class Efectivo extends Pago{
         float f = getMonto();
         return f;
     }
+
+    @Override
+    float getMonto() {
+        return 0;
+    }
+
+    @Override
+    Date getFecha() {
+        return null;
+    }
+
     @Override
     public String toString(){
         return "Efectivo{" +

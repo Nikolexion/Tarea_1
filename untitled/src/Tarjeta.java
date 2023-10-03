@@ -9,6 +9,15 @@ class Tarjeta extends Pago{
         this.tipo = tipo;
         this.numTransaccion = numTransaccion;
     }
+    @Override
+    float getMonto() {
+        return 0;
+    }
+
+    @Override
+    Date getFecha() {
+        return null;
+    }
 
     public String getTipo(){
         return tipo;
