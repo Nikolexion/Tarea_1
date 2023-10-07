@@ -5,6 +5,7 @@ public class Main {
 
         Pago transferencia = new Transferencia(10000, "Santander", "1");
         Pago efectivo = new Efectivo(11000);
+        Pago tarjeta = new Tarjeta(10000, "credito", "2138982139");
         Articulo articulo = new Articulo(10, "xiaomi redmi 12", "celular", 10000);
         DetalleOrden detalleOrden = new DetalleOrden(transferencia,2);
         OrdenCompra ordenCompra = new OrdenCompra(transferencia, detalleOrden, articulo);
@@ -31,10 +32,10 @@ public class Main {
 
         System.out.println(cliente.toString());
         System.out.println(ordenCompra.toString());
-        System.out.println(cliente.toString());
-        System.out.println(cliente.toString());
-        System.out.println(cliente.toString());
-        System.out.println(cliente.toString());
+        System.out.println(articulo.toString());
+        System.out.println(transferencia.toString());
+        System.out.println(efectivo.toString());
+        System.out.println(tarjeta.toString());
 
     }
 }

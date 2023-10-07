@@ -13,15 +13,12 @@ public class OrdenCompra {
     private float efectivo;
 
 
-    public OrdenCompra(Pago pago, DetalleOrden detalleOrden) { //según enunciado no debería ser estado, fecha??
+    public OrdenCompra(Pago pago, DetalleOrden detalleOrden, Articulo articulo) {
         estado = "En proceso";
         fecha = new Date();
         this.pago = pago;
         this.detalleOrden = detalleOrden;
-
-
-        //Inicializacion de un articulo arbitrario
-        this.articulo = new Articulo(10, "xiaomi redmi 12", "celular", 10000);
+        this.articulo = articulo;
 
         efectivo += pago.getMonto();
         if (pago.getMonto() == articulo.getPrecio() * detalleOrden.getCantidad()) {
