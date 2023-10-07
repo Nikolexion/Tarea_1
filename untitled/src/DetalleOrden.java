@@ -6,7 +6,7 @@ class DetalleOrden {
     private ArrayList<Articulo> articuloArrayList;
     public DetalleOrden(String estado, Pago pago, int cantidad) {
         this.cantidad = cantidad;
-        this.ordenCompra = new OrdenCompra(estado, pago);
+        this.ordenCompra = new OrdenCompra(pago);
 
         articuloArrayList = new ArrayList<>();
     }

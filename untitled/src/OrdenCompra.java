@@ -21,7 +21,7 @@ public class OrdenCompra {
         //Inicializacion de Arraylist
         tributarioArrayList = new ArrayList<>();
         detalleordenArraylist = new ArrayList<>();
-        this.articulo = new Articulo(10, "xiaomi redmi 12", "celular", 12000);
+        this.articulo = new Articulo(10, "xiaomi redmi 12", "celular", 10000);
 
         efectivo += pago.getMonto();
         if (pago.getMonto() == articulo.getPrecio()){
