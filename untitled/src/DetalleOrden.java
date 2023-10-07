@@ -7,6 +7,7 @@ class DetalleOrden {
     public DetalleOrden(String estado, Pago pago, int cantidad) {
         this.cantidad = cantidad;
         this.ordenCompra = new OrdenCompra(estado, pago);
+
         articuloArrayList = new ArrayList<>();
     }
 
