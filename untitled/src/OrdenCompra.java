@@ -4,6 +4,10 @@ import java.util.Date;
 public class OrdenCompra {
     private Date fecha;
     private String estado;
+
+    private ArrayList<DocTributario> tributarioArrayList;
+    private ArrayList<DetalleOrden> ordenArraylist;
+
     private Pago pago;
     private ArrayList<DocTributario> tributarioArrayList;
     private ArrayList<DetalleOrden> detalleordenArraylist;
