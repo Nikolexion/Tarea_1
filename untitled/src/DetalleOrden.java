@@ -12,7 +12,7 @@ class DetalleOrden extends OrdenCompra {
 
     }
 
-    public float calcPrecio(Articulo articulo) {
+    public float calcPrecio() {
         return this.articulo.getPrecio();
     }
     public float calcPrecioSinIVA() {
