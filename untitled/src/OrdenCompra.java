@@ -5,7 +5,7 @@ public class OrdenCompra {
     private Date fecha;
     private String estado;
 
-    private ArrayList<DocTributario> tributarioArrayList;
+    private DocTributario docTributario;
 
     private DetalleOrden detalleOrden;
     private Pago pago;
@@ -19,8 +19,6 @@ public class OrdenCompra {
         this.pago = pago;
         this.detalleOrden = detalleOrden;
 
-        //Inicializacion de Arraylist
-        tributarioArrayList = new ArrayList<>();
 
         //Inicializacion de un articulo arbitrario
         this.articulo = new Articulo(10, "xiaomi redmi 12", "celular", 10000);
@@ -85,15 +83,6 @@ public class OrdenCompra {
         this.pago = pago;
     }
 
-    //Funciones para modificar ArrayList Documentos Tributarios---------------------------------------------------------
-
-    public DocTributario getTributarioArrayList() {
-        return tributarioArrayList.remove(0);
-    }
-
-    public void setTributarioArrayList(DocTributario NuevoDoc) {
-        this.tributarioArrayList.add(NuevoDoc);
-    }
 }
 
 

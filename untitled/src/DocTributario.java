@@ -4,12 +4,14 @@ abstract class DocTributario {
     private String numero;
     private String rut;
     private Date fecha;
+    private Direccion direccion;
     private OrdenCompra ordenCompra;
 
-    public DocTributario(String numero, String rut, OrdenCompra ordenCompra) {
+    public DocTributario(String numero, String rut, Direccion direccion, OrdenCompra ordenCompra) {
         this.numero = numero;
         this.rut = rut;
         fecha = new Date();
+        this.direccion = direccion;
         this.ordenCompra = ordenCompra;
     }
 
