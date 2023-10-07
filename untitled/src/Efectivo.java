@@ -2,8 +2,8 @@ import java.util.Date;
 
 class Efectivo extends Pago{
 
-    public Efectivo(float monto, Date fecha) {
-        super(monto, fecha);
+    public Efectivo(float monto) {
+        super(monto);
     }
     public float calcDevolucion(){ //Falta definir correctamente calcDevolucion
         float f = getMonto();

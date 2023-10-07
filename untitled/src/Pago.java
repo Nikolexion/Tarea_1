@@ -3,9 +3,9 @@ abstract class Pago {
     private float monto;
     private Date fecha;
 
-    public Pago(float monto, Date fecha){
+    public Pago(float monto){
         this.monto = monto;
-        this.fecha = fecha;
+        fecha = new Date();
     }
 
     abstract float getMonto();
