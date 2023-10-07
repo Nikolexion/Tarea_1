@@ -1,7 +1,7 @@
 public class Main {
     public static void Main(String[] args){
-        Pago efectivo = new Efectivo(4);
-        OrdenCompra ordenCompra = new OrdenCompra("a",efectivo);
+        Pago transferencia = new Transferencia(9000, "Santander", "1");
+        OrdenCompra ordenCompra = new OrdenCompra("En proceso",transferencia);
         
     }
 }

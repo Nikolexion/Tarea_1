@@ -9,6 +9,7 @@ public class OrdenCompra {
     private ArrayList<DetalleOrden> detalleordenArraylist;
 
     private Pago pago;
+    private Articulo articulo;
 
 
     public OrdenCompra(String estado, Pago pago) { //según enunciado no debería ser estado, fecha??
@@ -19,19 +20,22 @@ public class OrdenCompra {
         //Inicializacion de Arraylist
         tributarioArrayList = new ArrayList<>();
         detalleordenArraylist = new ArrayList<>();
+        this.articulo = new Articulo(10, "xiaomi redmi 12", "celular", 12000);
     }
 
-    public float calcPrecioSinIVA(){
-        return 0;
+    public float calcPrecioSinIVA() {
+        float precioSinIVA = (float) (this.articulo.getPrecio() * 0.81);
+        return precioSinIVA;
     }
-    public float calcIVA(){
-        return 0;
+    public float calcIVA() {
+        float precioIVA = (float) (this.articulo.getPrecio() * 0.19);
+        return precioIVA;
     }
-    public float calcPrecio(){
-        return 0;
+    public float calcPrecio() {
+        return this.articulo.getPrecio();
     }
-    public float calcPeso(){
-        return 0;
+    public float calcPeso() {
+        return this.articulo.getPeso();
     }
 
     //Getters y setters-------------------------------------------------------------------------------------------------

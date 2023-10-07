@@ -1,29 +1,25 @@
-class DetalleOrden extends OrdenCompra {
+import java.util.ArrayList;
+
+class DetalleOrden {
     private int cantidad;
     private OrdenCompra ordenCompra;
-    private Articulo articulo;
+    private ArrayList<Articulo> articuloArrayList;
     public DetalleOrden(String estado, Pago pago, int cantidad) {
-        super(estado, pago);
         this.cantidad = cantidad;
         this.ordenCompra = new OrdenCompra(estado, pago);
-
-        //Agregamos un articulo arbitrario
-        this.articulo = new Articulo(10, "xiaomi redmi 12", "celular", 12000);
-
+        articuloArrayList = new ArrayList<>();
     }
 
     public float calcPrecio() {
-        return this.articulo.getPrecio();
+        return ordenCompra.calcPrecio();
     }
     public float calcPrecioSinIVA() {
-        float precioSinIVA = (float) (this.articulo.getPrecio() * 0.81);
-        return precioSinIVA;
+        return ordenCompra.calcPrecioSinIVA();
     }
     public float calcIVA() {
-        float precioIVA = (float) (this.articulo.getPrecio() * 0.19);
-        return precioIVA;
+        return ordenCompra.calcIVA();
     }
     public float calcPeso() {
-        return this.articulo.getPeso();
+        return ordenCompra.calcPeso();
     }
 }
