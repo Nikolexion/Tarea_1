@@ -6,28 +6,30 @@ public class OrdenCompra {
     private String estado;
 
     private ArrayList<DocTributario> tributarioArrayList;
-    private ArrayList<DetalleOrden> detalleordenArraylist;
 
+    private DetalleOrden detalleOrden;
     private Pago pago;
     private Articulo articulo;
     private float efectivo;
 
 
-    public OrdenCompra(Pago pago) { //según enunciado no debería ser estado, fecha??
+    public OrdenCompra(Pago pago, DetalleOrden detalleOrden) { //según enunciado no debería ser estado, fecha??
         estado = "En proceso";
         fecha = new Date();
         this.pago = pago;
+        this.detalleOrden = detalleOrden;
 
         //Inicializacion de Arraylist
         tributarioArrayList = new ArrayList<>();
-        detalleordenArraylist = new ArrayList<>();
+
+        //Inicializacion de un articulo arbitrario
         this.articulo = new Articulo(10, "xiaomi redmi 12", "celular", 10000);
 
         efectivo += pago.getMonto();
-        if (pago.getMonto() == articulo.getPrecio()){
+        if (pago.getMonto() == articulo.getPrecio() * detalleOrden.getCantidad()) {
             estado = "Finalizado";
             System.out.println(estado);
-        } else if (efectivo < articulo.getPrecio()){
+        } else if (efectivo < articulo.getPrecio() * detalleOrden.getCantidad()) {
             estado = "Recibiendo efectivo";
             System.out.println(estado);
 
@@ -40,18 +42,21 @@ public class OrdenCompra {
     }
 
     public float calcPrecioSinIVA() {
-        float precioSinIVA = (float) (this.articulo.getPrecio() * 0.81);
+        float precioSinIVA = (float) ((this.articulo.getPrecio() * 0.81) * detalleOrden.getCantidad());
         return precioSinIVA;
     }
+
     public float calcIVA() {
-        float precioIVA = (float) (this.articulo.getPrecio() * 0.19);
+        float precioIVA = (float) (this.articulo.getPrecio() * 0.19 * detalleOrden.getCantidad());
         return precioIVA;
     }
+
     public float calcPrecio() {
-        return this.articulo.getPrecio();
+        return this.articulo.getPrecio() * detalleOrden.getCantidad();
     }
+
     public float calcPeso() {
-        return this.articulo.getPeso();
+        return this.articulo.getPeso() * detalleOrden.getCantidad();
     }
 
     //Getters y setters-------------------------------------------------------------------------------------------------
@@ -59,6 +64,7 @@ public class OrdenCompra {
     public Date getFecha() {
         return fecha;
     }
+
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
@@ -66,6 +72,7 @@ public class OrdenCompra {
     public String getEstado() {
         return estado;
     }
+
     public void setEstado(String estado) {
         this.estado = estado;
     }
@@ -73,6 +80,7 @@ public class OrdenCompra {
     public Pago getPago() {
         return pago;
     }
+
     public void setPago(Pago pago) {
         this.pago = pago;
     }
@@ -86,13 +94,6 @@ public class OrdenCompra {
     public void setTributarioArrayList(DocTributario NuevoDoc) {
         this.tributarioArrayList.add(NuevoDoc);
     }
-
-    //Funciones para modificar ArrayList Detalles de Orden
-    public DetalleOrden getDetalleOrdenArraylist(DetalleOrden NuevoDetalle){
-        return this.detalleordenArraylist.remove(0);
-    }
-    public void setDetalleOrdenArraylist(DetalleOrden NuevoDetalle){
-        this.detalleordenArraylist.add(NuevoDetalle);
-    }
-
 }
+
+
