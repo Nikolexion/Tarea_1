@@ -5,7 +5,7 @@ public class OrdenCompra {
     private Date fecha;
     private String estado;
     private ArrayList<DocTributario> tributarioArrayList;
-    //private ArrayList<DetalleOrden> ordenArraylist;
+    private ArrayList<DetalleOrden> ordenArraylist;
     private Pago pago;
 
     public OrdenCompra(String estado, Pago pago) {
@@ -29,10 +29,6 @@ public class OrdenCompra {
 
     public Date getFecha() {
         return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
     }
 
     public String getEstado() {
