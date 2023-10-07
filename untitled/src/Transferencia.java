@@ -3,15 +3,17 @@ import java.util.Date;
 class Transferencia extends Pago {
     private String banco;
     private String numCuenta;
+    private float monto;
 
     public Transferencia(float monto,String banco, String numCuenta) {
         super(monto);
+        this.monto = monto;
         this.banco = banco;
         this.numCuenta = numCuenta;
     }
     @Override
     float getMonto() {
-        return 0;
+        return monto;
     }
 
     @Override

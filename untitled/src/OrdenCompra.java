@@ -10,17 +10,33 @@ public class OrdenCompra {
 
     private Pago pago;
     private Articulo articulo;
+    private float efectivo;
 
 
-    public OrdenCompra(String estado, Pago pago) { //según enunciado no debería ser estado, fecha??
+    public OrdenCompra(Pago pago) { //según enunciado no debería ser estado, fecha??
+        estado = "En proceso";
         fecha = new Date();
-        this.estado = estado;
         this.pago = pago;
 
         //Inicializacion de Arraylist
         tributarioArrayList = new ArrayList<>();
         detalleordenArraylist = new ArrayList<>();
         this.articulo = new Articulo(10, "xiaomi redmi 12", "celular", 12000);
+
+        efectivo += pago.getMonto();
+        if (pago.getMonto() == articulo.getPrecio()){
+            estado = "Finalizado";
+            System.out.println(estado);
+        } else if (efectivo < articulo.getPrecio()){
+            estado = "Recibiendo efectivo";
+            System.out.println(estado);
+
+        } else {
+            estado = "Retornando cambio";
+            System.out.println(estado);
+            System.out.println(pago.getMonto() - articulo.getPrecio());
+
+        }
     }
 
     public float calcPrecioSinIVA() {

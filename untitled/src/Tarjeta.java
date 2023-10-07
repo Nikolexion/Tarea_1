@@ -3,15 +3,17 @@ import java.util.Date;
 class Tarjeta extends Pago{
     private String tipo;
     private String numTransaccion;
+    private  float monto;
 
     public Tarjeta(float monto,String tipo, String numTransaccion){
         super(monto);
+        this.monto = monto;
         this.tipo = tipo;
         this.numTransaccion = numTransaccion;
     }
     @Override
     float getMonto() {
-        return 0;
+        return monto;
     }
 
     @Override
